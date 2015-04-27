@@ -1,20 +1,18 @@
 function getData($timeout,$q){
 	return function(){
 
-		var defer=$q.defer();
-		
 		//simulated async function
-		$timeout(function(){
-			var random=Math.round( Math.random() );
-			if( Math.round( Math.random() ) ){
-				defer.resolve('data received')
-			}
-			else{
-				defer.reject('oh no an error! try again')
-			}
-		},2000)
+		return $q(function(resolve,reject){
+			$timeout(function(){
+				if( Math.round(Math.random()) ){
+					resolve('data received!')
+				}
+				else{
+					reject('oh no an error! try again');
+				}
+			},2000);
+		})
 		
-		return defer.promise
 	}
 }
 
