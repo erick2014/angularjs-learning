@@ -1,5 +1,13 @@
 angular.module('app',[]);
 
+//create a controller called ListCtrl that injects our messages service, and exposes 
+//the list from our service to our view.
+angular.module('app').controller("ListCtrl",function(messages){
+	var self=this;
+	self.messages=messages.list;
+})
+
+
 //create our service, called messages
 angular.module('app').factory('messages',function(){
 	//create and return and empty object called messages
