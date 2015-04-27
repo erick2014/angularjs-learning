@@ -9,7 +9,9 @@
     <div ng-app="app">
       <h1>Services</h1>
       <div ng-controller="ListCtrl as list">
-        <p ng-repeat="message in list.messages">{{ message.id }}: {{ message.text }}</p>
+        <p ng-repeat="message in list.messages track by $index">
+          [<a href="#" ng-click="list.removeMessage($index)">X</a>]{{ message.id }}: {{ message.text }}
+        </p>
       </div>
       <div ng-controller="PostCtrl as post">
         <form ng-submit="post.addMessage(post.newMessage)">

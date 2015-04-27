@@ -6,6 +6,9 @@ angular.module('app').controller("ListCtrl",['messages',
 	function(messages){
 		var self=this;
 		self.messages=messages.list;
+		self.removeMessage=function(index){
+			messages.remove(index);
+		}
 	}
 ])
 
@@ -32,5 +35,11 @@ angular.module('app').factory('messages',function(){
 		messages.list.push({id:messages.list.length,text:message});
 	}
 
+	messages.remove=function(index){
+		console.log("we are going to remove index",index);
+		messages.list.splice(index,1);
+	}
+
 	return messages;
-})
+});
+
