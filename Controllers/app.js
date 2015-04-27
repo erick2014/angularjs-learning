@@ -4,5 +4,4 @@ angular.module('app').controller('MainCtrl',function($scope){
     $scope.updateMessage = function(message){
         $scope.message = message;
     };
-  }
 })
