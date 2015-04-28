@@ -3,7 +3,7 @@ angular.module('functionalities',[])
 .directive("entering",function(){
   return function(scope,element){
     element.bind("mouseenter",function(){
-      console.log("mouse has entered the div");
+      element.addClass("activeClass");
     })
   }
 })
@@ -11,7 +11,7 @@ angular.module('functionalities',[])
 .directive("leaving",function(){
   return function(scope,element){
     element.bind("mouseleave",function(){
-      console.log("mouse has left the div");
+      element.removeClass("activeClass");
     })
   }
 })
