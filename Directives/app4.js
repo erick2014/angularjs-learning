@@ -7,8 +7,11 @@
       restrict:'E',
       transclude:true,
       template:'<h2>Hello world!</h2><div role="tabpanel" ng-transclude></div>',
-      scope:{},
-      link:function(scope,elem,attr){}
+      require:'^tabset',
+      scope:{ heading:'@'},
+      link:function(scope,elem,attr,tabsetCtrl){
+        tabsetCtrl.addTab(scope);
+      }
     }
   })
 
@@ -22,7 +25,10 @@
       controllerAs:'tabset',
       controller:function(){
         var self=this;
-        self.tabs=[]
+        self.tabs=[];
+        self.addTab=function(tab){
+          self.tabs.push(tab);
+        }
       }
     }
   })
