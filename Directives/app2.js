@@ -12,8 +12,7 @@ angular.module('coolApp',[])
   //directive definition here
   return function(scope,element,attrs){
     element.bind("mouseenter",function(){
-      console.log(scope);
-      scope.$apply("fun.start()");
+      scope.$apply(attrs.entering);
     })
   }
 })
