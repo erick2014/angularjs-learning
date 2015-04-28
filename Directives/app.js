@@ -1,7 +1,7 @@
 angular.module('greetings',[])
 .directive("welcome",function(){
   return {
-    restrict:"C",
+    restrict:"M",
     link:function(){
       alert("Howdy")
     }
