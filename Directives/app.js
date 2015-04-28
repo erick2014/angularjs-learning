@@ -9,7 +9,7 @@ angular.module('functionalities',[])
 })
 
 .directive("leaving",function(){
-  return function(scope,element,attr){
+  return function(scope,element,attrs){
     element.bind("mouseleave",function(){
       element.removeClass(attrs.entering);
     })
