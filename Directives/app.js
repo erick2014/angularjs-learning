@@ -1,9 +1,9 @@
-angular.module('greetings',[])
-.directive("welcome",function(){
-  return {
-    restrict:"M",
-    link:function(){
-      alert("Howdy")
-    }
+angular.module('functionalities',[])
+
+.directive("entering",function(){
+  return function(scope,element){
+    element.bind("mouseenter",function(){
+      console.log("mouse has entered the div");
+    })
   }
 })
