@@ -42,7 +42,6 @@
               self.tabs[i].active=false;
             }
           }
-
           //active the selected tab
           selectedTab.active=true;
         }
