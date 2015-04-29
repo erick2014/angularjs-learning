@@ -35,11 +35,15 @@
           }
         }
         self.select=function(selectedTab){
-          angular.forEach(self.tabs,function(tab){
-            if( tab.active && tab !== selectedTab ){
-              tab.active=false;
+           //loop all tabs
+          for(i=self.tabs.length;i--;){
+            //disable tab that was active
+            if( self.tabs[i].active && self.tabs[i]!==selectedTab ){
+              self.tabs[i].active=false;
             }
-          });
+          }
+
+          //active the selected tab
           selectedTab.active=true;
         }
       }
